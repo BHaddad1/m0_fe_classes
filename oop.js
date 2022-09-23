@@ -16,6 +16,7 @@ class Unicorn {
 
 var firstUnicorn = new Unicorn("Chesty");
 console.log(firstUnicorn);
+console.log(firstUnicorn.say("Feed me"));
 
 
 // Write a class called Vampire
@@ -25,13 +26,19 @@ console.log(firstUnicorn);
 // it should have a thirsty property, that is true by default
 // it should have a drink method. When called, the thirsty property changes to false
 class Vampire {
-  constructor(name, pet){
+  constructor(name){
     this.name = name
     this.pet = "bat"
     this.thirsty = true
   }
-
+  changeThirsty(newThirsty) {
+    this.thirsty = false
+  }
 }
+var vampire1 = new Vampire ("ChestyMyLove");
+
+vampire1.changeThirsty(false);
+console.log(vampire1);
 
 
 //  Write a Dragon class
@@ -41,7 +48,31 @@ class Vampire {
 //  it should have a isHungry property that is true by default
 //  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
   // HINT: This requires you to use your knowledge from the conditionals lesson
+class Dragon{
+  constructor(name, rider, color){
+    this.name = name
+    this.rider = rider
+    this.color = color
+    this.isHungry = true
+    this.eat = 3
+  }
+  changeIsHungry(newIsHungry){
+    this.isHungry = false;
+  }
+  changeEat(newEat){
+    this.eat = newEat;
+  if (newEat >= 4) {
+    console.log("The dragon is no longer hungry!");
+  }
+  else {
+    console.log("The dragon is still hungry.");
+  }
+}
+}
+var dragon1 = new Dragon("ChestyMyBaby", "Mouse", "White and orange");
 
+dragon1.changeEat(5);
+console.log(dragon1.newEat);
 
 
 //  BIG CHALLNEGE: Write a Hobbit class
@@ -52,3 +83,28 @@ class Vampire {
 //  it should have an isAdult property (boolean) that is false by default. once a Hobbit is 33, it should be an adult
 //  it should have an isOld property that defaults to false. once a Hobbit is 101, it is old.
 //  it should have a hasRing property. If the Hobbit's name is "Frodo", true, if not, false.
+class Hobbit{
+  constructor(name, disposition){
+    this.name = name
+    this.disposition = disposition
+    this.age = 0
+    this.isAdult = false
+    this.idOld = false
+    this.hasRing = false
+  }
+  celebrateBirthday(birthday){
+    return `${birthday} + 1` //I know that's not right but I don't know what goes here
+    }
+  changeIsOld (newIsOld){
+    this.isOld = newIsOld
+  }
+  changeIsAdult (newIsAdult){ //I don't know where or how to create a condition that would
+    this.isAdult = newIsAdult
+  }
+  changeHasRing (newHasRIng){
+    this.hasRing = newHasRing //I don't know where or how to create a condition for the name within this method that would change the argument hasRing.
+  }
+}
+
+var hobbit1 = new Hobbit ("Chesty", "grumpy")
+console.log(hobbit1);
