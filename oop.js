@@ -48,31 +48,24 @@ console.log(vampire1);
 //  it should have a isHungry property that is true by default
 //  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
   // HINT: This requires you to use your knowledge from the conditionals lesson
-class Dragon{
-  constructor(name, rider, color){
-    this.name = name
-    this.rider = rider
-    this.color = color
-    this.isHungry = true
-    this.eat = 3
+class Dragon {
+  constructor(name, rider, color) {
+    this.name = name;
+    this.rider = rider;
+    this.color = color;
+    this.isHungry = true;
+    this.eatCount = 0;
   }
-  changeIsHungry(newIsHungry){
-    this.isHungry = false;
+
+  eat() {
+    this.eatCount = this.eatCount + 1;
   }
-  changeEat(newEat){
-    this.eat = newEat;
-  if (newEat >= 4) {
-    console.log("The dragon is no longer hungry!");
-  }
-  else {
-    console.log("The dragon is still hungry.");
-  }
-}
+
 }
 var dragon1 = new Dragon("ChestyMyBaby", "Mouse", "White and orange");
-
-dragon1.changeEat(5);
-console.log(dragon1.newEat);
+console.log(dragon1);
+dragon1.eat();
+console.log(dragon1);
 
 
 //  BIG CHALLNEGE: Write a Hobbit class
@@ -93,7 +86,7 @@ class Hobbit{
     this.hasRing = false
   }
   celebrateBirthday(birthday){
-    return `${birthday} + 1` //I know that's not right but I don't know what goes here
+    return `${birthday} ` //I know that's not right but I don't know what goes here
     }
   changeIsOld (newIsOld){
     this.isOld = newIsOld
